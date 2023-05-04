@@ -2,47 +2,33 @@
 // Implement a function that determines whether a string that contains only letters is an isogram.
 // Assume the empty string is an isogram. Ignore letter case
 
-// solution 1=> loop through array comparing one index to the one after it.
-// if they look alike return true if not return false
-// function isIsogram(str){
-//     var i, j;
-//     str = str.toLowerCase();
-//     for(i = 0; i < str.length; ++i) {
-//       for(j = i + 1; j < str.length; ++j) {
-//         if(str[i] === str[j]) {
-//           return false;
-//         }
-//       }
-//     }
-//     return true;
-//  }
 
-// soltion 2=> split string then sort it, if the i+1 == i then it is an isogram, if not it isnt
+// soltion 1=> split string then sort it, if the i+1 == i then it is an isogram, if not it isnt
 
-// function isIsogram(string){
-//     if(string.isEmpty){
-//         return true;
-//     } else {
-//         string = string.toLowerCase();
-//     }
-//     let array = string.split('');
-//     for(let i = 0; i < array.length; i++){
-//         if(sortedArray[i+1] == sortedArray[i]){
-//             return false;
-//         }
-//     }
-//     return true;
-// };
+function isIsogram(string){
+    if(string.isEmpty){
+        return true;
+    } else {
+        string = string.toLowerCase();
+    }
+    let array = string.split('');
+    for(let i = 0; i < array.length; i++){
+        if(sortedArray[i+1] == sortedArray[i]){
+            return false;
+        }
+    }
+    return true;
+};
 
-// function getSum(a, b){
-//     if(a==b){
-//         return a
-//     } else if(a < b){
-//         return a + getSum(a+1,b)
-//     } else{
-//         return a + getSum(a-1,b)
-//     }
-// }
+function getSum(a, b){
+    if(a==b){
+        return a
+    } else if(a < b){
+        return a + getSum(a+1,b)
+    } else{
+        return a + getSum(a-1,b)
+    }
+}
 
 // console.log(getSum(8,3))
 
